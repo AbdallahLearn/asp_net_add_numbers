@@ -22,12 +22,25 @@
                 <label for="num2">Number 2</label><br />
                 <input type="number" name="num2" id="num2" class="form-control w-50" /><br />
                 <button class="btn btn-primary mt-3" onclick="calculateSum()">Add</button>
-                <h3 class="mt-3" id="result">Result: </h3>
+                <h3 class="mt-3" id="result_sum">Result: </h3>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+
+      <div class="container mt-5">
+        <div class="input-group mb-3 w-50 m-auto">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="iban" placeholder="Enter your IBAN">
+                <label for="iban" style="color:gray">IBAN</label>
+            </div>
+            <button type="button" onClick="getIban()" class="btn btn-primary mt-3 w-100">Check</button>
+        </div>
+        <div id="result" class=" "></div>
+    </div>
+    
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -49,9 +62,9 @@
         
         if (!isNaN(num1) && !isNaN(num2)) {
           const sum = num1 + num2;
-          document.getElementById("result").textContent = "Result: " + sum;
+          document.getElementById("result_sum").textContent = "Result: " + sum;
         } else {
-          document.getElementById("result").textContent =
+          document.getElementById("result_sum").textContent =
             "Please enter valid numbers.";
         }
       }
